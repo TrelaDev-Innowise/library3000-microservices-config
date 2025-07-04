@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: image-service
+
+  data:
+    mongodb:
+      database: image-db
+      uri: mongodb://admin:admin@localhost:27017/image-db?authSource=admin
+
+server:
+  port: 8083
