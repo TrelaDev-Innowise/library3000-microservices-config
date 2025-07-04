@@ -1,0 +1,63 @@
+spring:
+  application:
+    name: book-service
+
+  datasource:
+    url: jdbc:postgresql://localhost:5433/library_book_db
+    username: admin
+    password: admin
+    driver-class-name: org.postgresql.Driver
+
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+
+management:
+  health:
+    circuitbreakers:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:
+        registerHealthIndicator: true
+        slidingWindowType: COUNT_BASED
+        slidingWindowSize: 10
+        failureRateThreshold: 50
+        waitDurationInOpenState: 5s
+        permittedNumberOfCallsInHalfOpenState: 3
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+        minimum-number-of-calls: 5
+        ignore-exceptions:
+          - java.util.NoSuchElementException
+
+  timelimiter:
+    configs:
+      default:
+        timeoutDuration: 3s
+
+  retry:
+    configs:
+      default:
+        max-attempts: 3
+        wait-duration: 2s
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+    org.springframework.security.web: DEBUG
+
+server:
+  port: 8082
