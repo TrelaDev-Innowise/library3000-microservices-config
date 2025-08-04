@@ -8,3 +8,9 @@ spring:
         binder:
           brokers:
             - localhost:9092
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
