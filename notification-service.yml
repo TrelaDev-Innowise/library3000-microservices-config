@@ -4,6 +4,10 @@ server:
 spring:
   cloud:
     stream:
+      bindings:
+        email-in-0:
+          destination: send-email
+          group: ${spring.application.name}
       kafka:
         binder:
           brokers:
