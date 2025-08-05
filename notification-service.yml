@@ -3,6 +3,8 @@ server:
 
 spring:
   cloud:
+    function:
+      definition: email
     stream:
       bindings:
         recieveLoginEmail-in-0:
