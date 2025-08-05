@@ -7,7 +7,7 @@ spring:
       definition: email
     stream:
       bindings:
-        recieveLoginEmail-in-0:
+        email-in-0:
           destination: send-email
           group: ${spring.application.name}
       kafka:
