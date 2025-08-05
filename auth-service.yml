@@ -31,6 +31,8 @@ spring:
 
 jwt:
   secret: mySuperSecretKeyThatIsAtLeast32CharactersLong
+  expiration:
+    time-minutes: 1
 
 logging:
   level:
