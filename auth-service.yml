@@ -3,10 +3,10 @@ spring:
     name: auth-service
   cloud:
     function:
-      definition: sendLoginEmail
+      definition: sendLoginEvent
     stream:
       bindings:
-        sendLoginEmail-out-0:
+        sendLoginEvent-out-0:
           destination: send-email
           group: ${spring.application.name}
       kafka:
