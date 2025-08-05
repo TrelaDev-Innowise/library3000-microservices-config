@@ -7,7 +7,7 @@ spring:
     stream:
       bindings:
         sendLoginEmail-out-0:
-          destination: sendEmail
+          destination: send-email
       kafka:
         binder:
           brokers:
