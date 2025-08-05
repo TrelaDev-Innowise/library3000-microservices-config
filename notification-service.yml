@@ -4,10 +4,10 @@ server:
 spring:
   cloud:
     function:
-      definition: recieveLoginEvent
+      definition: receiveLoginEvent
     stream:
       bindings:
-        recieveLoginEvent-in-0:
+        receiveLoginEvent-in-0:
           destination: send-email
           group: ${spring.application.name}
       kafka:
