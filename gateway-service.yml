@@ -50,9 +50,9 @@ management:
     heapdump:
       access: unrestricted
     metrics:
-      enabled: true
+      access: unrestricted
     prometheus:
-      enabled: true
+      access: unrestricted
 
 resilience4j:
   circuitbreaker:
