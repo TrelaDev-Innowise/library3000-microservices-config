@@ -19,7 +19,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: health, metrics, prometheus
+        include: heapdump, threaddump, health, metrics, prometheus
   endpoint:
     health:
       show-details: always
