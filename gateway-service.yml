@@ -47,6 +47,8 @@ management:
   endpoint:
     health:
       show-details: always
+    heapdump:
+      enabled: true
     metrics:
       enabled: true
     prometheus:
