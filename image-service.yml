@@ -18,10 +18,12 @@ management:
   endpoint:
     health:
       show-details: always
+    heapdump:
+      access: unrestricted
     metrics:
-      enabled: true
+      access: unrestricted
     prometheus:
-      enabled: true
+      access: unrestricted
 
 server:
   port: 8083
