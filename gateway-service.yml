@@ -48,11 +48,11 @@ management:
     health:
       show-details: always
     heapdump:
-      enabled: public
+      access: unrestricted
     metrics:
-      enabled: public
+      enabled: true
     prometheus:
-      enabled: public
+      enabled: true
 
 resilience4j:
   circuitbreaker:
