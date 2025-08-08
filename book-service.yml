@@ -23,10 +23,14 @@ management:
   endpoints:
     web:
       exposure:
-        include: "*"
+        include: health, metrics, prometheus, circuitbreakers
   endpoint:
     health:
       show-details: always
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
 
 resilience4j:
   circuitbreaker:

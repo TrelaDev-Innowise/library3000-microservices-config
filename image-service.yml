@@ -7,5 +7,21 @@ spring:
       database: image-db
       uri: mongodb://admin:admin@localhost:27017/image-db?authSource=admin
 
+management:
+  health:
+    circuitbreakers:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health, metrics, prometheus, circuitbreakers
+  endpoint:
+    health:
+      show-details: always
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+
 server:
   port: 8083
