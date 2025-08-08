@@ -12,9 +12,6 @@ spring:
           brokers:
             - localhost:9092
 
-    
-
-
   datasource:
     url: jdbc:postgresql://localhost:5432/library_auth_db
     username: admin
