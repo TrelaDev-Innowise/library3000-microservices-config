@@ -5,11 +5,10 @@ spring:
 
 consul:
   discovery:
-    instance-id: auth-service-${HOSTNAME}  # Unikalne ID na podstawie nazwy Pod-a
+    instance-id: ${spring.application.name}-${POD_NAME:${random.uuid}}
     health-check-path: /actuator/health
     health-check-interval: 10s
     health-check-timeout: 1s
-    health-check-headers:
-      Content-Type: application/json
-    scheme: http  # Wymuś HTTP (nie HTTPS)
-    hostname: localhost  # KLUCZOWE - wymuś healthchecki na localhost
+    health-check-url: http://localhost:${server.port}/actuator/health
+    prefer-ip-address: false
+    hostname: localhost
