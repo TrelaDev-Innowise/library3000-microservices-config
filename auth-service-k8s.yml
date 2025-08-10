@@ -5,10 +5,6 @@ spring:
 
 consul:
   discovery:
-    instance-id: ${spring.application.name}-${POD_NAME:${random.uuid}}
-    health-check-path: /actuator/health
+    health-check-url: http://${POD_IP}:8081/actuator/health
     health-check-interval: 10s
     health-check-timeout: 1s
-    health-check-url: http://localhost:${server.port}/actuator/health
-    prefer-ip-address: false
-    hostname: localhost
