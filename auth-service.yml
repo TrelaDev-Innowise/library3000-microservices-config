@@ -55,3 +55,12 @@ management:
       access: unrestricted
     prometheus:
       access: unrestricted
+
+
+---
+spring:
+  profiles: k8s
+consul:
+  discovery:
+    instanceId: "${HOSTNAME}"
+    healthCheckUrl: http://${HOSTNAME}:8081/actuator/health
