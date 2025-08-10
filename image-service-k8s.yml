@@ -1,0 +1,12 @@
+spring:
+  config:
+    activate:
+      on-profile: k8s
+
+  cloud:
+    consul:
+      discovery:
+        instance-id: ${HOSTNAME}:${server.port}
+        service-name: ${spring.application.name}
+        health-check-url: http://${spring.application.name}:${server.port}/actuator/health
+        prefer-ip-address: false
