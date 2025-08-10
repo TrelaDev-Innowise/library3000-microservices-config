@@ -77,3 +77,6 @@ resilience4j:
       default:
         max-attempts: 3
         wait-duration: 2s
+
+server:
+  port: 8080
