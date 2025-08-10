@@ -5,4 +5,7 @@ spring:
 
 consul:
   discovery:
+    instance-id: auth-service-${spring.application.instance-id:${random.value}}
     healthCheckUrl: "http://${HOSTNAME}:8081/actuator/health"
+    prefer-ip-address: false
+    hostname: auth-service
