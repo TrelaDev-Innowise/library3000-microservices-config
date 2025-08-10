@@ -7,6 +7,6 @@ spring:
     consul:
       discovery:
         instance-id: ${HOSTNAME}:${server.port}
-        service-name: auth-service
-        health-check-url: http://auth-service:8081/actuator/health
+        service-name: ${spring.application.name}
+        health-check-url: http://${spring.application.name}:${server.port}/actuator/health
         prefer-ip-address: false
