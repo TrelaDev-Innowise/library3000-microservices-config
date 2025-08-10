@@ -3,8 +3,9 @@ spring:
     activate:
       on-profile: k8s
 
-consul:
-  discovery:
-    health-check-url: http://${POD_IP}:8081/actuator/health
-    health-check-interval: 10s
-    health-check-timeout: 1s
+  cloud:
+    consul:
+      discovery:
+        service-name: auth-service
+        health-check-url: http://auth-service:8081/actuator/health
+        prefer-ip-address: false
