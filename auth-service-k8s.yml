@@ -1,6 +1,9 @@
 spring:
-  profiles: k8s
+  config:
+    activate:
+      on-profile: k8s
+
 consul:
   discovery:
     instanceId: "${HOSTNAME}"
-    healthCheckUrl: http://${HOSTNAME}:8081/actuator/health
+    healthCheckUrl: "http://${HOSTNAME}:8081/actuator/health"
