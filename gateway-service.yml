@@ -36,6 +36,10 @@ logging:
     org.springframework.security: DEBUG
     org.springframework.security.web: DEBUG
 
+    io.github.resilience4j.circuitbreaker: DEBUG
+    io.github.resilience4j.timelimiter: DEBUG
+    org.springframework.cloud.gateway.filter.circuitbreaker: DEBUG
+
 management:
   health:
     circuitbreakers:
@@ -81,3 +85,5 @@ resilience4j:
 
 server:
   port: 8080
+
+
