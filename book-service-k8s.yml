@@ -11,3 +11,5 @@ spring:
         health-check-url: http://${spring.application.name}:${server.port}/actuator/health
         prefer-ip-address: false
         hostname: ${spring.application.name}
+        health-check-interval: 10s
+        deregister-critical-service-after: 1m
