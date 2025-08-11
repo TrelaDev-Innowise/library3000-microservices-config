@@ -70,6 +70,7 @@ resilience4j:
   timelimiter:
     configs:
       default:
+        #longer time cause of fallback in minikube cluster
         timeoutDuration: 9s
 
   retry:
