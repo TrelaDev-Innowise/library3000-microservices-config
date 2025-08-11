@@ -70,7 +70,7 @@ resilience4j:
   timelimiter:
     configs:
       default:
-        timeoutDuration: 3s
+        timeoutDuration: 9s
 
   retry:
     configs:
