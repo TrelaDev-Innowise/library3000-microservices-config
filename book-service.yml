@@ -69,6 +69,9 @@ logging:
   level:
     org.springframework.security: DEBUG
     org.springframework.security.web: DEBUG
+    org.springframework.cache: DEBUG
+    org.springframework.data.redis: DEBUG
+
 
 server:
   port: 8082
